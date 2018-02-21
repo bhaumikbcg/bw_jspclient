@@ -31,7 +31,7 @@ class App extends Component {
           <form>
             <div class="form-group">
             <label for="bw_test">Boardwalk Test</label>
-            <select value={this.state.value} onChange={this.handleChange} class="form-control form-control-sm" ref={(el) => this.selectValue = el} id="bw_test" >
+            <select value={this.state.value} onChange={this.handleChange} class="form-control form-control-sm"  id="bw_test" >
               <option value="test">Test</option>
               <option value="testTableManager">testTableManager</option>
               <option value="testcolumns">testcolumns</option>
@@ -46,5 +46,4 @@ class App extends Component {
    );
   }
 }
-
 export default App;

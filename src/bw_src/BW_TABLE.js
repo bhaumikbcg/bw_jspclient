@@ -56,5 +56,4 @@ export default class BW_TABLE extends Component {
     getrow(id){
         return this.row.get(id)
     }
-
 }
