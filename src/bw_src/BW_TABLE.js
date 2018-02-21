@@ -45,16 +45,16 @@ export default class BW_TABLE extends Component {
         this.column.set(id,c)
     }
     getcolumn(id){
-        this.column.get(id)
+        return this.column.get(id)
     }
 
-    addrow(id,name,bw_tbl_id,columntype,sequence_no,tx_id,default_string_value,default_float_value,default_integer_value,default_tbl_value,lookup_tbl_id,lookup_row_id,is_enumerated,width,is_active,source,attr){
+    addrow(id,name,bw_tbl_id,sequence_no,tx_id,default_tbl_value,is_active,owner_tid,owner_id){
         var r = new BW_ROW();
-        r.set(id,name,bw_tbl_id,columntype,sequence_no,tx_id,default_string_value,default_float_value,default_integer_value,default_tbl_value,lookup_tbl_id,lookup_row_id,is_enumerated,width,is_active,source,attr);
+        r.set(id,name, bw_tbl_id, sequence_no, tx_id, default_tbl_value, is_active, owner_tid, owner_id);
         this.row.set(id,r)
     }
     getrow(id){
-        this.row.get(id)
+        return this.row.get(id)
     }
 
 }
