@@ -1,7 +1,6 @@
 //React files
 import React, { Component } from 'react';
 import Dropdown from './form_components/Dropdown'
-
 class App extends Component {
   render() {
     return (

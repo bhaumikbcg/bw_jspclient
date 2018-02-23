@@ -38,14 +38,16 @@ export default function test(s) {
             break;
         case 'testCellByColumn':
             cm = new BW_CellManager()
-            cm.add(444,222,333,"hello")
-            cm.add(888,222,333,"hi")
+            cm.add(444,222,333,"https://media.vanityfair.com/photos/54ca8fc9f547ce3c06e1cbcc/master/w_690,c_limit/image.jpg")
+            cm.add(888,222,333,"$99")
             a = cm.getCellByColumn(333)
             break;
         case 'stringValue':
             cm = new BW_CELL()
-            cm.addStringValue(111, "img.jpg", 1)
+            cm.addStringValue(111, "https://media.vanityfair.com/photos/54ca8fc9f547ce3c06e1cbcc/master/w_690,c_limit/image.jpg", 1)
+            //cm.addStringValue(222, "$99", 2)
             a = cm.getStringValue(1)
+            //a = cm.getStringValue(2)
             break;
         default:
             console.log("default case");

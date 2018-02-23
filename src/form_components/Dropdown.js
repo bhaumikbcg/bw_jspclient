@@ -3,7 +3,7 @@ import test from '../bw_src/BW_TableManagerTest'
 export default class Dropdown extends Component{
     constructor(){
         super()
-        this.state = {value: 'test'};
+        this.state = {value: 'testCellByColumn'};
 
         this.handleChange = this.handleChange.bind(this);
     }
@@ -32,7 +32,11 @@ export default class Dropdown extends Component{
                     </select>
                 </div>
             </form>
-            <h2>{JSON.stringify(test(this.state.value))}</h2>
+            <h5 id="cell">{JSON.stringify(test(this.state.value))}</h5>
+            <div className="col-md-4">
+            <img src={test(this.state.value)[0].cell_type} className="img-fluid" alt="Ralph Lauren" />
+            <p>Price: {test(this.state.value)[1].cell_type}</p>
+            </div>
             </div>
         );
     }
