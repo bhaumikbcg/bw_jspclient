@@ -1,5 +1,6 @@
 import BW_TableManager from './BW_TableManager'
 import BW_CellManager from './BW_CellManager'
+import BW_CELL from './BW_CELL'
 export default function test(s) {
     var a = {};
     var t1 = {};
@@ -40,6 +41,11 @@ export default function test(s) {
             cm.add(444,222,333,"hello")
             cm.add(888,222,333,"hi")
             a = cm.getCellByColumn(333)
+            break;
+        case 'stringValue':
+            cm = new BW_CELL()
+            cm.addStringValue(111, "img.jpg", 1)
+            a = cm.getStringValue(1)
             break;
         default:
             console.log("default case");

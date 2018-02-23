@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import StringValue from './BW_StringValue'
 export default class BW_CELL extends Component{
     constructor(){
         super()
@@ -22,6 +23,7 @@ export default class BW_CELL extends Component{
         this.table_value_id = 0
         this.design_tbl_value = 0
         this.active = false
+        this.stringValue = new Map()
     }
 
     set(id, bw_row_id, bw_column_id, cell_type, bw_stringvalue_id, integer_value_id, double_value_id, string_value, integer_value, double_value, formula, table_value, tx_id, design_string_value, design_integer_value, design_double_value, design_tx_id, table_value_id, design_tbl_value, active){
@@ -47,4 +49,13 @@ export default class BW_CELL extends Component{
         this.active = active
     }
 
+    addStringValue(cellId, value, tx_id){
+        var sv = new StringValue()
+        sv.set(cellId, value, tx_id)
+        this.stringValue.set(tx_id, value)
+    }
+
+    getStringValue(tx_id){
+        return this.stringValue.get(tx_id)
+    }
 }

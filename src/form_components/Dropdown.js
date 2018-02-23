@@ -28,10 +28,11 @@ export default class Dropdown extends Component{
                         <option value="testcells">testcells</option>
                         <option value="testCellByRow">testCellByRow</option>
                         <option value="testCellByColumn">testCellByColumn</option>
+                        <option value="stringValue">stringValue</option>
                     </select>
                 </div>
             </form>
-            <h2 id="test">{JSON.stringify(test(this.state.value))}</h2>
+            <h2>{JSON.stringify(test(this.state.value))}</h2>
             </div>
         );
     }
