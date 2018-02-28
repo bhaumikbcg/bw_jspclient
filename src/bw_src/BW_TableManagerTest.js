@@ -40,6 +40,8 @@ export default function test(s) {
             cm = new BW_CellManager()
             cm.add(444,222,333,"https://media.vanityfair.com/photos/54ca8fc9f547ce3c06e1cbcc/master/w_690,c_limit/image.jpg")
             cm.add(888,222,333,"$99")
+            cm.add(111,222,333,"https://pmcwwd.files.wordpress.com/2017/11/ralph-lauren-portrait-2.jpg")
+            cm.add(555,222,333,"$499")
             a = cm.getCellByColumn(333)
             break;
         case 'stringValue':

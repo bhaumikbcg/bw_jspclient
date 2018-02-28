@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import test from '../bw_src/BW_TableManagerTest'
+import DisplayImage from './DisplayImage'
 export default class Dropdown extends Component{
     constructor(){
         super()
@@ -10,10 +11,10 @@ export default class Dropdown extends Component{
     handleChange(event){
         this.setState({value: event.target.value});
     }
-    getValue(){
+    /*getValue(){
         return this.selectValue.value;
-    }
-
+    }*/
+    
     render(){
         return(
             <div className="col-sm">
@@ -33,10 +34,7 @@ export default class Dropdown extends Component{
                 </div>
             </form>
             <h5 id="cell">{JSON.stringify(test(this.state.value))}</h5>
-            <div className="col-md-4">
-            <img src={test(this.state.value)[0].cell_type} className="img-fluid" alt="Ralph Lauren" />
-            <p>Price: {test(this.state.value)[1].cell_type}</p>
-            </div>
+            <DisplayImage cell={test(this.state.value)}/>
             </div>
         );
     }
