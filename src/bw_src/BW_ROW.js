@@ -1,4 +1,5 @@
 import {Component} from 'react';
+var rowjson = require('../database/row.json');
 export default class BW_ROW extends Component {
 
     constructor(){
@@ -6,38 +7,27 @@ export default class BW_ROW extends Component {
         this.id = 0;
         this.name="";
         this.bw_tbl_id=0;
-        this.columntype=0;
-        this.sequence_no=0;
         this.tx_id=0;
-        this.default_string_value="";
-        this.default_integer_value=0;
-        this.default_float_value=0;
-        this.default_tbl_value=0;
-        this.lookup_tbl_id=0;
-        this.lookup_row_id=0;
-        this.is_enumerated=0;
-        this.width=0;
+        this.sequence_no=0;
         this.is_active=0;
-        this.source=0;
-        this.attr=0;
+        this.owner_id = 0;
+        this.owner_tid = 0;
+        this.row = new Map();
     }
-    set (id,name,bw_tbl_id,columntype,sequence_no,tx_id,default_string_value,default_float_value,default_integer_value,default_tbl_value,lookup_tbl_id,lookup_row_id,is_enumerated,width,is_active,source,attr){
+    set (id,name,bw_tbl_id,tx_id,sequence_no,is_active,owner_id,owner_tid){
         this.id = id;
         this.name=name;
         this.bw_tbl_id=bw_tbl_id;
-        this.columntype=columntype;
-        this.sequence_no=sequence_no;
         this.tx_id=tx_id;
-        this.default_string_value=default_string_value;
-        this.default_integer_value=default_integer_value;
-        this.default_float_value=default_float_value;
-        this.default_tbl_value=default_tbl_value;
-        this.lookup_tbl_id=lookup_tbl_id;
-        this.lookup_row_id=lookup_row_id;
-        this.is_enumerated=is_enumerated;
-        this.width=width;
+        this.sequence_no=sequence_no;
         this.is_active=is_active;
-        this.source=source;
-        this.attr=attr;
+        this.owner_id = owner_id;
+        this.owner_tid = owner_tid;
+    }
+
+    getrow(id){
+        console.log(rowjson[1001][id]);
+        return rowjson[1001][id];
+        //return "abc";
     }
 }

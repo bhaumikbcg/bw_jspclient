@@ -1,6 +1,8 @@
 import {Component} from 'react';
 import BW_COLUMN from './BW_COLUMN';
 import BW_ROW from './BW_ROW';
+var tablejson = require('../database/table.json');
+var fs = require('fs');
 export default class BW_TABLE extends Component {
 
     constructor() {
@@ -48,12 +50,23 @@ export default class BW_TABLE extends Component {
         return this.column.get(id)
     }
 
-    addrow(id,name,bw_tbl_id,sequence_no,tx_id,default_tbl_value,is_active,owner_tid,owner_id){
+    addrow(id,name,bw_tbl_id,tx_id,sequence_no,is_active,owner_id,owner_tid){
         var r = new BW_ROW();
-        r.set(id,name, bw_tbl_id, sequence_no, tx_id, default_tbl_value, is_active, owner_tid, owner_id);
+        r.set(id,name,bw_tbl_id,tx_id,sequence_no,is_active,owner_id,owner_tid);
         this.row.set(id,r)
     }
     getrow(id){
         return this.row.get(id)
     }
+
+    gettable(id){
+        tablejson['1002'] = ["1001", "", "10001", true, true, true, "1", "2", "", "", "", "3", "4", ""];
+        console.log('gettable invoked');
+        console.log(fs);
+        //fs.writeFileSync('../database/table.json', JSON.stringify(tablejson));
+        fs.writeFileSync('../database/test123.json', JSON.stringify(tablejson));
+        
+        return tablejson[id];
+    }
 }
+

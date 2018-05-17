@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import test from '../bw_src/BW_TableManagerTest'
-import DisplayImage from './DisplayImage'
+import {dbtest,tabletest} from '../bw_src/BW_DatabaseTest'
+//import DisplayImage from './DisplayImage'
 export default class Dropdown extends Component{
     constructor(){
         super()
-        this.state = {value: 'testCellByColumn'};
+        this.state = {value: 'testrows'};
 
         this.handleChange = this.handleChange.bind(this);
     }
@@ -34,7 +35,9 @@ export default class Dropdown extends Component{
                 </div>
             </form>
             <h5 id="cell">{JSON.stringify(test(this.state.value))}</h5>
-            <DisplayImage cell={test(this.state.value)}/>
+            <p>{JSON.stringify(dbtest())}</p>
+            <p>{JSON.stringify(tabletest())}</p>
+            {/* <DisplayImage cell={test(this.state.value)}/> */}
             </div>
         );
     }

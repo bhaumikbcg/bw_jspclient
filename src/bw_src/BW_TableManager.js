@@ -15,4 +15,6 @@ export default class BW_TableManager extends Component {
     get(id){
         return this.List.get(id);
     }
+
+    //getRowId()  
 }
