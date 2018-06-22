@@ -64,7 +64,7 @@ export default class BW_TABLE extends Component {
         console.log('gettable invoked');
         console.log(fs);
         //fs.writeFileSync('../database/table.json', JSON.stringify(tablejson));
-        fs.writeFileSync('../database/test123.json', JSON.stringify(tablejson));
+        //fs.writeFileSync('../database/test123.json', JSON.stringify(tablejson));
         
         return tablejson[id];
     }
